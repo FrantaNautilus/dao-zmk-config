@@ -15,15 +15,13 @@
 #define USDEF 0
 #define USNUM 1
 #define USNAV 2
-#define USFUN 3
-#define USADJ 4
-#define CSDEF 5
-#define CSDIA 6
-#define CSDII 7
-#define CSNUM 8
-#define CSNAV 9
-#define CSFUN 10
-#define CSADJ 11
+#define USADJ 3
+#define CSDEF 4
+#define CSDIA 5
+#define CSDII 6
+#define CSNUM 7
+#define CSNAV 8
+#define CSADJ 9
 
 // Other number definitions
 #define TAPPING_TERM 150
@@ -120,20 +118,20 @@ name: name##_macro {                      \
              MACRO(cs_n_caron, <&macro_tap &kp CS_CARON &kp CS_N>;)
              MACRO(cs_d_caron, <&macro_tap &kp CS_CARON &kp CS_D>;)
              MACRO(cs_o_acute, <&macro_tap &kp CS_ACUTE &kp CS_O>;)
-             // Emacs convenience macros
-             MACRO(emacs_c_x, <&macro_press &kp LCTRL>, <&macro_tap &kp X>, <&macro_release &kp LCTRL>;)
-             MACRO(emacs_c_y, <&macro_press &kp LCTRL>, <&macro_tap &kp Y>, <&macro_release &kp LCTRL>;)
-             MACRO(emacs_c_z, <&macro_press &kp LCTRL>, <&macro_tap &kp Y>, <&macro_release &kp LCTRL>;)
-             MACRO(emacs_c_x_e, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp E>;)
-             MACRO(emacs_c_w, <&macro_press &kp LCTRL> , <&macro_tap &kp W> , <&macro_release &kp LCTRL>;)
-             MACRO(emacs_c_x_u, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp U>;)
-             MACRO(emacs_c_x_r, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp R>;)
-             MACRO(emacs_m_x, <&macro_press &kp LALT> , <&macro_tap &kp X> , <&macro_release &kp LALT>;)
-             MACRO(emacs_m_w, <&macro_press &kp LALT> , <&macro_tap &kp W> , <&macro_release &kp LALT>;)
-             MACRO(emacs_m_y, <&macro_press &kp LALT> , <&macro_tap &kp Y> , <&macro_release &kp LALT>;)
-             MACRO(emacs_m_z, <&macro_press &kp LALT> , <&macro_tap &kp Y> , <&macro_release &kp LALT>;)
-             // General convenience macros
-             MACRO(input_lng, <&macro_press &kp LCTRL> , <&macro_press &kp LALT> , <&macro_tap &kp K> , <&macro_release &kp LCTRL> , <&macro_release &kp LALT>;)
+             // // Emacs convenience macros
+             // MACRO(emacs_c_x, <&macro_press &kp LCTRL>, <&macro_tap &kp X>, <&macro_release &kp LCTRL>;)
+             // MACRO(emacs_c_y, <&macro_press &kp LCTRL>, <&macro_tap &kp Y>, <&macro_release &kp LCTRL>;)
+             // MACRO(emacs_c_z, <&macro_press &kp LCTRL>, <&macro_tap &kp Y>, <&macro_release &kp LCTRL>;)
+             // MACRO(emacs_c_x_e, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp E>;)
+             // MACRO(emacs_c_w, <&macro_press &kp LCTRL> , <&macro_tap &kp W> , <&macro_release &kp LCTRL>;)
+             // MACRO(emacs_c_x_u, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp U>;)
+             // MACRO(emacs_c_x_r, <&macro_press &kp LCTRL> , <&macro_tap &kp X> , <&macro_release &kp LCTRL> , <&macro_tap &kp R>;)
+             // MACRO(emacs_m_x, <&macro_press &kp LALT> , <&macro_tap &kp X> , <&macro_release &kp LALT>;)
+             // MACRO(emacs_m_w, <&macro_press &kp LALT> , <&macro_tap &kp W> , <&macro_release &kp LALT>;)
+             // MACRO(emacs_m_y, <&macro_press &kp LALT> , <&macro_tap &kp Y> , <&macro_release &kp LALT>;)
+             // MACRO(emacs_m_z, <&macro_press &kp LALT> , <&macro_tap &kp Y> , <&macro_release &kp LALT>;)
+             // // General convenience macros
+             // MACRO(input_lng, <&macro_press &kp LCTRL> , <&macro_press &kp LALT> , <&macro_tap &kp K> , <&macro_release &kp LCTRL> , <&macro_release &kp LALT>;)
         };
 
         behaviors {
@@ -183,69 +181,89 @@ name: name##_macro {                      \
                     bindings       = <&kp CS_SEMI>, <&kp CS_COLON>;
                     mods           = <(MOD_LSFT|MOD_RSFT)>;
                 };
+                cssemi: csgrave {
+                    label          = "cssemi";
+                    compatible     = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings       = <&kp CS_GRAVE>, <&kp CS_TILDE>;
+                    mods           = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                cssemi: csequal {
+                    label          = "cssemi";
+                    compatible     = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings       = <&kp CS_EQUAL>, <&kp CS_PLUS>;
+                    mods           = <(MOD_LSFT|MOD_RSFT)>;
+                };
         };
 
         combos {
             compatible = "zmk,combos";
             COMBO(lag, 28 29, USDEF USNUM CSDEF CSNUM, &kp RALT)
             COMBO(rag, 33 34, USDEF USNUM CSDEF CSNUM, &kp RALT)
-            COMBO(csdeflayer, 12 13, USDEF CSDEF, &tog CSDEF)
-            COMBO(csdiilayer, 24 25, CSDEF, &tog CSDII)
+            COMBO(csdeflayer, 12 13, USDEF, &to CSDEF)
+            COMBO(usdeflayer, 12 13, CSDEF, &to USDEF)
+            //COMBO(csdiilayer, 24 25, CSDEF, &tog CSDII)
             COMBO(usnavlayer, 22 23, USDEF, &tog USNAV)
             COMBO(usnumlayer, 10 11, USDEF, &tog USNUM)
-            COMBO(usfunlayer, 34 35, USDEF, &tog USFUN)
             COMBO(csnavlayer, 22 23, CSDEF, &tog CSNAV)
             COMBO(csnumlayer, 10 11, CSDEF, &tog CSNUM)
-            COMBO(csfunlayer, 34 35, CSDEF, &tog CSFUN)
-            COMBO(copy, 15 16, USDEF CSDEF, &kp K_COPY)
-            COMBO(paste, 13 14, USDEF CSDEF, &kp K_PASTE)
-            COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
+            //COMBO(copy, 15 16, USDEF CSDEF, &kp K_COPY)
+            //COMBO(paste, 13 14, USDEF CSDEF, &kp K_PASTE)
+            //COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
 
-            COMBO(us_star, 7 19, USDEF, &kp STAR)
-            COMBO(us_fslh, 4 16, USDEF, &kp FSLH)
-            COMBO(us_plus, 8 20, USDEF, &kp PLUS)
-            COMBO(us_minus, 3 15, USDEF, &kp MINUS)
-            COMBO(us_caret, 9 21, USDEF, &kp CARET)
-            COMBO(us_under, 2 14, USDEF, &kp UNDER)
-            COMBO(us_dollar, 10 22, USDEF, &kp DOLLAR)
-            COMBO(us_amps, 1 13, USDEF, &kp AMPS)
-            COMBO(us_equal, 18 19, USDEF, &kp EQUAL)
-            COMBO(us_at, 16 28, USDEF, &kp AT)
-            COMBO(us_percent, 15 27, USDEF, &kp PERCENT)
-            COMBO(us_tilde, 14 26, USDEF, &kp TILDE)
-            COMBO(us_grave, 13 25, USDEF, &kp GRAVE)
-            COMBO(us_hash, 19 31, USDEF, &kp HASH)
-            COMBO(us_lpar, 19 20, USDEF, &kp LPAR)
-            COMBO(us_rpar, 21 22, USDEF, &kp RPAR)
-            COMBO(us_lbkt, 7 8, USDEF, &kp LBKT)
-            COMBO(us_rbkt, 9 10, USDEF, &kp RBKT)
-            COMBO(us_lbrc, 31 32, USDEF, &kp LBRC)
-            COMBO(us_rbrc, 33 34, USDEF, &kp RBRC)
-            COMBO(us_excl, 1 2, USDEF, &kp EXCL)
-            COMBO(us_qmark, 3 4, USDEF, &kp QMARK)
-
-            COMBO(cs_star, 7 19, CSDEF, &kp CS_STAR)
-            COMBO(cs_fslh, 4 16, CSDEF, &kp CS_FSLH)
-            COMBO(cs_plus, 8 20, CSDEF, &kp CS_PLUS)
-            COMBO(cs_minus, 3 15, CSDEF, &kp CS_MINUS)
-            COMBO(cs_caret, 9 21, CSDEF, &kp CS_CARET)
-            COMBO(cs_under, 2 14, CSDEF, &kp CS_UNDER)
-            COMBO(cs_dollar, 10 22, CSDEF, &kp CS_DOLLAR)
-            COMBO(cs_amps, 1 13, CSDEF, &kp CS_AMPS)
-            COMBO(cs_equal, 18 19, CSDEF, &kp CS_EQUAL)
-            COMBO(cs_at, 16 28, CSDEF, &kp CS_AT)
-            COMBO(cs_percent, 15 27, CSDEF, &kp CS_PERCENT)
-            COMBO(cs_tilde, 14 26, CSDEF, &kp CS_TILDE)
-            COMBO(cs_grave, 13 25, CSDEF, &kp CS_GRAVE)
-            COMBO(cs_hash, 19 31, CSDEF, &kp CS_HASH)
-            COMBO(cs_lpar, 19 20, CSDEF, &kp CS_LPAR)
-            COMBO(cs_rpar, 21 22, CSDEF, &kp CS_RPAR)
-            COMBO(cs_lbkt, 7 8, CSDEF, &kp CS_LBKT)
-            COMBO(cs_rbkt, 9 10, CSDEF, &kp CS_RBKT)
-            COMBO(cs_lbrc, 31 32, CSDEF, &kp CS_LBRC)
-            COMBO(cs_rbrc, 33 34, CSDEF, &kp CS_RBRC)
-            COMBO(cs_excl, 1 2, CSDEF, &kp CS_EXCL)
-            COMBO(cs_qmark, 3 4, CSDEF, &kp CS_QMARK)
+            // Shift
+            COMBO(7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RSHFT)
+            COMBO(4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LSHFT)
+            // Control
+            COMBO(8 20, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RCTRL)
+            COMBO(3 15, USDEF  USNUM USNAV CSDEF CSNUM CSNAV, &kp LCTRL)
+            // Alt
+            COMBO(9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LALT)
+            COMBO(2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LALT)
+            // Gui
+            COMBO(10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LGUI)
+            COMBO(1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI)
+            //Symbols US
+            COMBO(19 31, USDEF, &kp STAR)
+            COMBO(16 28, USDEF, &kp FSLH)
+            COMBO(20 32, USDEF, &kp PLUS)
+            COMBO(15 27, USDEF, &kp MINUS)
+            COMBO(21 33, USDEF, &kp CARET)
+            COMBO(14 26, USDEF, &kp UNDER)
+            COMBO(22 34, USDEF, &kp DOLLAR)
+            COMBO(13 25, USDEF, &kp AMPS)
+            COMBO(23 35, USDEF, &kp AT)
+            COMBO(12 24, USDEF, &kp PERCENT)
+            COMBO(23 35, USDEF, &kp HASH)
+            COMBO(5 17 , USDEF, &kp LPAR)
+            COMBO(6 18 , USDEF, &kp RPAR)
+            COMBO(17 29, USDEF, &kp LBKT)
+            COMBO(18 30, USDEF, &kp RBKT)
+            COMBO(0 12 , USDEF, &kp LBRC)
+            COMBO(11 23, USDEF, &kp RBRC)
+            COMBO(7 8, USDEF, &kp EXCL)
+            COMBO(3 4, USDEF, &kp QMARK)
+            // Symbols CS
+            COMBO(19 31, CSDEF, &kp CS_STAR)
+            COMBO(16 28, CSDEF, &kp CS_FSLH)
+            COMBO(20 32, CSDEF, &kp CS_PLUS)
+            COMBO(15 27, CSDEF, &kp CS_MINUS)
+            COMBO(21 33, CSDEF, &kp CS_CARET)
+            COMBO(14 26, CSDEF, &kp CS_UNDER)
+            COMBO(22 34, CSDEF, &kp CS_DOLLAR)
+            COMBO(13 25, CSDEF, &kp CS_AMPS)
+            COMBO(23 35, CSDEF, &kp CS_AT)
+            COMBO(12 24, CSDEF, &kp CS_PERCENT)
+            COMBO(23 35, CSDEF, &kp CS_HASH)
+            COMBO(5 17 , CSDEF, &kp CS_LPAR)
+            COMBO(6 18 , CSDEF, &kp CS_RPAR)
+            COMBO(17 29, CSDEF, &kp CS_LBKT)
+            COMBO(18 30, CSDEF, &kp CS_RBKT)
+            COMBO(0 12 , CSDEF, &kp CS_LBRC)
+            COMBO(11 23, CSDEF, &kp CS_RBRC)
+            COMBO(7 8, CSDEF, &kp EXCL)
+            COMBO(3 4, CSDEF, &kp QMARK)
         };
 
 // ------------------------------------------------------------------------------------------------------------
@@ -260,15 +278,13 @@ name: name##_macro {                      \
 // 0. default_layer
 // 1. us_num_layer
 // 2. us_nav_layer
-// 3. us_fun_layer
-// 4. us_adjust_layer
-// 5. cs_base_layer
-// 6. cs_dia_layer
-// 7. cs_dii_layer
-// 8. cs_num_layer
-// 9. cs_nav_layer
-// 10. cs_fun_layer
-// 11. cs_adjust_layer
+// 3. us_adjust_layer
+// 4. cs_base_layer
+// 5. cs_dia_layer
+// 6. cs_dii_layer
+// 7. cs_num_layer
+// 8. cs_nav_layer
+// 9. cs_adjust_layer
 
                 default_layer {
 // ------------------------------------------------------------------------------------------------------------
@@ -277,10 +293,10 @@ name: name##_macro {                      \
 // |  \↑|  |  Z  |  W  | TAB  |  H   |  J   |                   |  V   |  C   |  Y    |  M   |   X   |  /↑?  |
 //                            |NUMTOG| SHFT |  SPACE |  | ENTER | SHFT | FUN  |
                          bindings = <
-          &kp DEL  &kp Q           &kp L        &kp ESC       &kp P         &kp COMMA                                   &kp DOT   &kp F         &kp U         &kp D        &kp K        &kp BSPC
-          &kp SQT  &lhrm LGUI A    &lhrm LALT R &lhrm LCTRL E &lhrm LSHFT N &kp B                                       &kp G     &rhrm LSHFT S &rhrm LCTRL I &rhrm LALT T &rhrm LGUI O &kp SEMI
-          &kp BSLH &lhrm LCTRL Z   &kp W        &kp TAB       &kp H         &kp J                                       &kp V     &kp C         &kp Y         &kp M        &kp X        &kp FSLH
-                                                              &tog USNUM    &kp LSHFT &lt USNAV ENTER  &lt USNUM SPACE  &kp RSHFT &sl USFUN
+          &kp DEL  &kp K   &kp D &kp U   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp DOT   &kp L &kp Q &kp BSPC
+          &kp SQT  &kp O   &kp T &kp I   &kp S &kp G                                       &kp B     &kp N &kp E     &kp R &kp A &kp SEMI
+          &kp BSLH &kp X   &kp M &kp Y   &kp C &kp V                                       &kp J     &kp H &kp COMMA &kp W &kp Z &kp FSLH
+                            &  &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ESC &
                         >;
                 };
                 us_num_layer {
@@ -290,37 +306,28 @@ name: name##_macro {                      \
 // |   ,   |  -  |  /  |  +   |  *   |  =   |                   |  @   |  )    |  ]    |  }   |   !   |  &    |
 //                            |      |      |        |  |       |      |       |
                         bindings = <
-          &kp DOLLAR &kp N7        &kp N6        &kp N5         &kp N4          &kp N8                         &kp TILDE   &kp CARET         &kp UNDER        &kp HASH        &kp PIPE        &kp GRAVE
-          &kp DOT    &lhrm LGUI N3 &lhrm LALT N2 &lhrm LCTRL N1 &lhrm LSHFT N0  &kp N9                         &kp PERCENT &rhrm LSHFT LPAR  &rhrm LCTRL LBKT &rhrm LALT LBRC &rhrm LGUI BSLH &kp DOLLAR
-          &kp COMMA  &kp MINUS     &kp FSLH      &kp PLUS       &kp STAR        &kp EQUAL                      &kp AT      &kp RPAR          &kp RBKT         &kp RBRC        &kp EXCL        &kp AMPS
-                                                                &to USDEF       &to USDEF &kp ENTER  &kp SPACE &to USDEF   &to USDEF
+          &kp DOLLAR &kp N7    &kp N6   &kp N5   &kp N4   &kp N8                  &kp TILDE   &kp CARET &kp UNDER &kp HASH &kp PIPE &kp GRAVE
+          &kp DOT    &kp N3    &kp N2   &kp N1   &kp N0   &kp N9                  &kp AT      &kp LPAR  &kp LBKT  &kp LBRC &kp BSLH &kp DOLLAR
+          &kp COMMA  &kp MINUS &kp FSLH &kp PLUS &kp STAR &kp EQUAL               &kp PERCENT &kp RPAR  &kp RBKT  &kp RBRC &kp EXCL &kp AMPS
+                                            &to USDEF   &kp TAB &kp ENTER  &kp SPACE &kp ESC   &to USDEF
                         >;
                 };
 
                 us_nav_layer {
                         bindings = <
-          &kp C_STOP &kp C_MUTE &kp C_VOL_UP &kp C_VOL_DN &kp C_PLAY &kp C_PAUSE                      &kp INS   &kp HOME  &kp UP   &kp END   &kp PG_UP &kp BSPC
-          &none      &kp LGUI   &kp LALT     &kp LCTRL    &kp LSHFT  &kp K_CMENU                      &kp CAPS  &kp LEFT  &kp DOWN &kp RIGHT &kp PG_DN &kp ENTER
-          &kp K_REDO &kp K_UNDO &kp K_CUT    &kp K_PASTE  &kp K_COPY &kp PSCRN                        &kp B     &kp H     &kp J    &kp K     &kp L     &kp F
-                                                          &to USDEF  &to USDEF   &kp ENTER  &kp SPACE &to USDEF &to USDEF
-                        >;
-                };
-
-                us_fun_layer {
-                        bindings = <
-          &kp LSHFT &kp F9 &kp F10 &kp F11 &kp F12   &tog USADJ                     &none       &emacs_c_y &emacs_c_w &emacs_m_w &emacs_m_y &none
-          &kp LCTRL &kp F5 &kp F6  &kp F7  &kp F8    &input_lng                     &emacs_m_x  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
-          &kp LALT  &kp F1 &kp F2  &kp F3  &kp F4    &none                          &emacs_c_x  &kp B      &kp N      &kp P      &kp F      &none
-                                           &to USDEF &to USDEF &kp ENTER  &kp SPACE &to USDEF   &to USDEF
+          &bt BT_SEL 0 &kp F9 &kp F10 &kp F11 &kp F12   &tog USADJ                  &kp INS   &kp HOME  &kp UP   &kp END   &kp PG_UP &kp C_VOL_UP
+          &bt BT_SEL 1 &kp F5 &kp F6  &kp F7  &kp F8    &kp K_PLAY_PAUSE            &kp CAPS  &kp LEFT  &kp DOWN &kp RIGHT &kp PG_DN &kp C_MUTE
+          &bt BT_SEL 2 &kp F1 &kp F2  &kp F3  &kp F4    &kp K_MENU                  &kp PSCRN &kp H     &kp J    &kp K     &kp L     &kp C_VOL_DN
+                                             &to USDEF  &kp TAB   &kp ENTER  &kp SPACE &kp ESC   &to USDEF
                         >;
                 };
 
                 us_adjust_layer {
                         bindings = <
-          &bootloader &none        &none        &none        &none        &tog USADJ                       &none     &none     &none     &none  &none  &none
-          &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                     &none     &none     &none     &none  &none  &none
-          &sys_reset  &none        &none        &none        &none        &none                            &none     &none     &none     &none  &none  &none
-                                                                          &to USDEF    &to USDEF &to USDEF &to USDEF &to USDEF &to USDEF
+          &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &none       &none       &none  &none
+          &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp C_POWER  &kp C_SLEEP &kp C_LOCK  &none  &none
+          &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &kp C_BRI_DN &none       &none       &none  &none
+                                                          &to USDEF    &to USDEF &to USDEF &to USDEF &to USDEF &to USDEF
                         >;
                 };
 
@@ -331,25 +338,25 @@ name: name##_macro {                      \
 // |  \↑|  |  Z  |  W  | TAB  |  H   |  J   |                   |  V   |  C   |  Y    |  M   |   X   |  /↑?  |
 //                            | NAV  |      |  SPACE |  | ENTER |      | FUN  |
                          bindings = <
-          &kp DEL   &kp CS_Q        &kp CS_L        &kp ESC          &kp CS_P               &cscomma                                       &csdot    &kp CS_F              &kp CS_U        &kp CS_D        &kp CS_K         &kp BSPC
-          &csquote  &lhrm LGUI CS_A &lhrm LALT CS_R &lhrm LCTRL CS_E &lhrm LSHFT CS_N       &kp CS_B                                       &kp CS_G  &rhrm LSHFT CS_S      &rhrm LCTRL CS_I &rhrm LALT CS_T &rhrm LGUI CS_O &cssemi
-          &csbslh   &kp CS_Z        &kp CS_W        &kp TAB          &kp CS_H               &kp CS_J                                       &kp CS_V  &kp CS_C              &kp CS_Y        &kp CS_M        &kp CS_X         &csfslh
-                                                                     &ldia_mosl CSFUN CSDIA &kp LSHFT  &lt CSNAV ENTER  &lt CSNUM SPACE    &kp RSHFT &rdia_mosl CSFUN CSDIA
+          &kp DEL   &kp CS_K &kp CS_D &kp CS_U &kp CS_F &csgrave                &csequal     &kp CS_P &csdot   &kp CS_L &kp CS_Q &kp BSPC
+          &csquote  &kp CS_O &kp CS_T &kp CS_I &kp CS_S &kp CS_G                &kp CS_B     &kp CS_N &kp CS_E &kp CS_R &kp CS_A &cssemi
+          &csbslh   &kp CS_X &kp CS_M &kp CS_Y &kp CS_C &kp CS_V                &kp CS_J     &kp CS_H &cscomma &kp CS_W &kp CS_Z &csfslh
+                                      &ldia_mosl CSFUN CSDIA &kp LSHFT  &lt CSNAV ENTER  &lt CSNUM SPACE    &kp RSHFT &rdia_mosl CSFUN CSDIA
                         >;
                 };
 
                 cs_dia_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  DEL  |  ←  |  ↑  |  ↓   |  →   |      |                   |  ÷   |  ú   |  ů    |  ď   |   ß   | BKSPC |
+// |  DEL  |  ←  |  ↑  |  ↓   |  →   |  ?   |                   |  ÷   |  ú   |  ů    |  ď   |   ß   | BKSPC |
 // |   º   |  á  |  ř  |  ě   |  ň   |  ´   |                   |  ˇ   |  š   |  í    |  ť   |   ó   |   §   |
-// |   ¦   |  ž  |     |  é   |  °   |  ı   |                   |  ×   |  č   |  ý    |  ¨   |   ẞ   |       |
+// |   ¦   |  ž  |  !  |  é   |  °   |  ı   |                   |  ×   |  č   |  ý    |  ¨   |   ẞ   |       |
 //                            |      |      |  SPACE |  | ENTER |      |      |
                          bindings = <
-          &kp DEL           &kp CS_LARROW    &kp CS_UARROW  &kp CS_DARROW  &kp CS_RARROW    &kp CS_QMARK                        &kp CS_DIV      &kp CS_U_ACUTE &kp CS_U_RING  &cs_d_caron     &kp CS_SZ       &kp BSPC
-          &kp CS_DEG        &kp CS_A_ACUTE   &kp CS_R_CARON &kp CS_E_CARON &cs_n_caron      &kp CS_ACUTE                        &kp CS_CARON    &kp CS_S_CARON &kp CS_I_ACUTE &cs_t_caron     &cs_o_acute     &kp CS_SECT
-          &kp CS_PSEUDOPIPE &kp CS_Z_CARON   &kp CS_EXCL    &kp CS_E_ACUTE &kp CS_DEAD_RING &kp CS_NEGATE                       &kp CS_MULT     &kp CS_C_CARON &kp CS_Y_ACUTE &kp CS_UMLAUT   &kp CS_SZ_SMALL &none
-                                                                           &to CSDEF        &to CSDEF      &to CSDEF  &to CSDEF &to CSDEF       &to CSDEF
-                        >;
+          &kp DEL      &kp CS_SZ       &cs_d_caron   &kp CS_U_RING  &kp CS_U_ACUTE &kp CS_DIV               &kp CS_QMARK    &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW  &kp BSPC
+          &kp CS_SECT  &cs_o_acute     &cs_t_caron   &kp CS_I_CARON &kp CS_S_CARON &kp CS_CARON             &kp CS_ACUTE    &cs_n_caron      &kp CS_E_CARON &kp CS_R_CARON  &kp CS_A_ACUTE &kp CS_DEG
+          &kp CS_OMEGA &kp CS_SZ_SMALL &kp CS_UMLAUT &kp CS_Y_ACUTE &kp CS_C_CARON &kp CS_MULT              &kp CS_NEGATE   &kp CS_DEAD_RING &kp CS_E_ACUTE &kp CS_EXCL     &kp CS_Z_CARON &kp CS_PSEUDOPIPE
+                                                                           &sl CSDII        &to CSDEF      &to CSDEF  &to CSDEF &to CSDEF       &sl CSDII
+                       >;
                 };
 
                 cs_dii_layer {
@@ -359,9 +366,9 @@ name: name##_macro {                      \
 // |   `   |  ^  |  ˘  |  ¸   |  ©   |  ˙   |                   |  ŧ   |  Ŧ   |  Ŋ    |  Ω   |   ª   |   ´   |
 //                            |      |      |  SPACE |  | ENTER |      |      |
                          bindings = <
-          &kp DEL             &kp CS_RING     &kp CS_YEN    &kp CS_OCROSS  &kp CS_OCROSS_CAP &none                                 &kp CS_D_STROKE  &kp CS_D_STROKE_CAP  &kp CS_BAR_ABOVE   &kp CS_L_STROKE    &kp CS_L_STROKE_CAP &kp BSPC
-          &kp CS_DOUBLE_ACUTE &kp CS_H_STROKE &kp CS_OGONEK &kp CS_EURO    &kp CS_AE         &kp CS_PARAG                          &kp CS_RMARK     &kp CS_BOTTOM_SQT    &kp CS_UPPER_SQT_L &kp CS_UPPER_SQT_R &kp CS_PLINE        &kp CS_PLINE_CAP
-          &kp CS_DEAD_GRAVE_L &kp CS_HAT      &kp CS_BREVE  &kp CS_CEDILLA &kp CS_CMARK      &kp CS_DOT_ABOVE                      &kp CS_T_STROKE  &kp CS_T_STROKE_CAP  &kp CS_ETA         &kp CS_OMEGA       &kp CS_A_INDEX      &kp CS_DEAD_GRAVE_R
+          &kp DEL             &kp CS_RING     &kp CS_YEN    &kp CS_OCROSS  &kp CS_OCROSS_CAP &none                           &kp CS_D_STROKE  &kp CS_D_STROKE_CAP  &kp CS_BAR_ABOVE   &kp CS_L_STROKE    &kp CS_L_STROKE_CAP &kp BSPC
+          &kp CS_DOUBLE_ACUTE &kp CS_H_STROKE &kp CS_OGONEK &kp CS_EURO    &kp CS_AE         &kp CS_PARAG                    &kp CS_RMARK     &kp CS_BOTTOM_SQT    &kp CS_UPPER_SQT_L &kp CS_UPPER_SQT_R &kp CS_PLINE        &kp CS_PLINE_CAP
+          &kp CS_DEAD_GRAVE_L &kp CS_HAT      &kp CS_BREVE  &kp CS_CEDILLA &kp CS_CMARK      &kp CS_DOT_ABOVE                &kp CS_T_STROKE  &kp CS_T_STROKE_CAP  &kp CS_ETA         &kp CS_OMEGA       &kp CS_A_INDEX      &kp CS_DEAD_GRAVE_R
                                                                            &to CSDEF         &to CSDEF        &to CSDEF  &to CSDEF &to CSDEF &to CSDEF
                         >;
                 };
@@ -373,38 +380,29 @@ name: name##_macro {                      \
 // |   ,   |  -  |  /  |  +   |  *   |  =   |                   |  @   |  )    |  ]    |  }   |   !   |  &    |
 //                            |      |      |        |  |       |      |       |
                         bindings = <
-          &kp CS_DOLLAR &kp CS_N7        &kp CS_N6        &kp CS_N5         &kp CS_N4          &kp CS_N8                         &kp CS_TILDE   &kp CS_CARET         &kp CS_UNDER        &kp CS_HASH        &kp CS_PIPE        &kp CS_GRAVE
-          &kp CS_DOT    &lhrm LGUI CS_N3 &lhrm LALT CS_N2 &lhrm LCTRL CS_N1 &lhrm LSHFT CS_N0  &kp CS_N9                         &kp CS_PERCENT &rhrm LSHFT CS_LPAR  &rhrm LCTRL CS_LBKT &rhrm LALT CS_LBRC &rhrm LGUI CS_BSLH &kp CS_DOLLAR
-          &kp CS_COMMA  &kp CS_MINUS     &kp CS_FSLH      &kp CS_PLUS       &kp CS_STAR        &kp CS_EQUAL                      &kp CS_AT      &kp CS_RPAR          &kp CS_RBKT         &kp CS_RBRC        &kp CS_EXCL        &kp CS_AMPS
-                                                                            &to CSDEF          &to CSDEF    &kp ENTER  &kp SPACE &to CSDEF      &to CSDEF
+          &kp CS_DOLLAR &kp CS_N7        &kp CS_N6   &kp CS_N5   &kp CS_N4   &kp CS_N8                         &kp CS_TILDE   &kp CS_CARET &kp CS_UNDER &kp CS_HASH &kp CS_PIPE &kp CS_GRAVE
+          &kp CS_DOT    &kp CS_N3        &kp CS_N2   &kp CS_N1   &kp CS_N0   &kp CS_N9                         &kp CS_AT      &kp CS_LPAR  &kp CS_LBKT  &kp CS_LBRC &kp CS_BSLH &kp CS_DOLLAR
+          &kp CS_COMMA  &kp CS_MINUS     &kp CS_FSLH &kp CS_PLUS &kp CS_STAR &kp CS_EQUAL                      &kp CS_PERCENT &kp CS_RPAR  &kp CS_RBKT  &kp CS_RBRC &kp CS_EXCL &kp CS_AMPS
+                                                                 &to CSDEF   &kp TAB      &kp ENTER  &kp SPACE &kp ESC        &to CSDEF
                         >;
                 };
 
                 cs_nav_layer {
-                        bindings = <
-          &kp C_STOP &kp C_MUTE &kp C_VOL_UP &kp C_VOL_DN &kp C_PLAY &kp C_PAUSE                      &kp INS   &kp HOME &kp UP   &kp END   &kp PG_UP &kp BSPC
-          &none      &kp LGUI   &kp LALT     &kp LCTRL    &kp LSHFT  &kp K_CMENU                      &kp CAPS  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &kp ENTER
-          &kp K_REDO &kp K_UNDO &kp K_CUT    &kp K_PASTE  &kp K_COPY &kp PSCRN                        &kp B     &kp H    &kp J    &kp K     &kp L     &kp F
-                                                          &to CSDEF  &to CSDEF   &kp ENTER  &kp SPACE &to CSDEF &to CSDEF
-                        >;
-                };
-
-                cs_fun_layer {
-                        bindings = <
-          &kp LSHFT &kp F9 &kp F10 &kp F11 &kp F12   &tog 8                         &none       &emacs_c_z &emacs_c_w &emacs_m_w &emacs_m_z &none
-          &kp LCTRL &kp F5 &kp F6  &kp F7  &kp F8    &input_lng                     &emacs_m_x  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
-          &kp LALT  &kp F1 &kp F2  &kp F3  &kp F4    &none                          &emacs_c_x  &kp B      &kp N      &kp P      &kp F      &none
-                                           &to CSDEF &to CSDEF  &kp ENTER &kp SPACE &to CSDEF   &to CSDEF
-                        >;
+                  bindings = <
+                    &bt BT_SEL 0 &kp F9 &kp F10 &kp F11 &kp F12   &tog USADJ                  &kp INS   &kp HOME  &kp UP   &kp END   &kp PG_UP &kp C_VOL_UP
+                    &bt BT_SEL 1 &kp F5 &kp F6  &kp F7  &kp F8    &kp K_PLAY_PAUSE            &kp CAPS  &kp LEFT  &kp DOWN &kp RIGHT &kp PG_DN &kp C_MUTE
+                    &bt BT_SEL 2 &kp F1 &kp F2  &kp F3  &kp F4    &kp K_MENU                  &kp PSCRN &kp H     &kp J    &kp K     &kp L     &kp C_VOL_DN
+                    &to CSDEF  &kp TAB   &kp ENTER  &kp SPACE &kp ESC   &to CSDEF
+                    >;
                 };
 
                 cs_adjust_layer {
-                        bindings = <
-          &bootloader &none        &none        &none        &none        &tog 8                             &none      &none  &none  &none  &none  &none
-          &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &none      &none  &none  &none  &none  &none
-          &sys_reset  &none        &none        &none        &none        &none                              &none      &none  &none  &none  &none  &none
-                                                             &to CSDEF    &to CSDEF    &to CSDEF  &to CSDEF  &to CSDEF  &to CSDEF
-                        >;
+                  bindings = <
+                    &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &none       &none       &none  &none
+                    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp C_POWER  &kp C_SLEEP &kp C_LOCK  &none  &none
+                    &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &kp C_BRI_DN &none       &none       &none  &none
+                    &to USDEF    &to USDEF &to USDEF &to USDEF &to USDEF &to USDEF
+                    >;
                 };
         };
 };
