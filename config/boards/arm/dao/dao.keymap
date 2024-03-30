@@ -122,57 +122,57 @@
       HTK(rhrm, balanced, TAPPING_TERM)
       HTMOSL(ldia_mosl, hold-preferred, TAPPING_TERM)
       HTMOSL(rdia_mosl, hold-preferred, TAPPING_TERM)
-      csquote: csquote {
-      label          = "csquote";
+  csquote: csquote {
+      //label          = "csquote";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_SQT>, <&kp CS_DQT>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
   csbslh: csbslh {
-      label          = "csbslh";
+      //label          = "csbslh";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_BSLH>, <&kp CS_PIPE>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
   csdot: csdot {
-      label          = "csdot";
+      //label          = "csdot";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_DOT>, <&kp CS_LT>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
   cscomma: cscomma {
-      label          = "cscomma";
+      //label          = "cscomma";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_COMMA>, <&kp CS_GT>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
   csfslh: csfslh {
-      label          = "csfslh";
+      //label          = "csfslh";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_FSLH>, <&kp CS_QMARK>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
   cssemi: cssemi {
-      label          = "cssemi";
+      //label          = "cssemi";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_SEMI>, <&kp CS_COLON>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
-  cssemi: csgrave {
-      label          = "cssemi";
+  csgrave: csgrave {
+      //label          = "cssemi";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_GRAVE>, <&kp CS_TILDE>;
       mods           = <(MOD_LSFT|MOD_RSFT)>;
     };
-  cssemi: csequal {
-      label          = "cssemi";
+  csequal: csequal {
+      //label          = "cssemi";
       compatible     = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings       = <&kp CS_EQUAL>, <&kp CS_PLUS>;
