@@ -279,7 +279,7 @@
         &kp DEL  &kp K   &kp D &kp U   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp DOT   &kp L &kp Q &kp BSPC
         &kp SQT  &kp O   &kp T &kp I   &kp S &kp G                                       &kp B     &kp N &kp E     &kp R &kp A &kp SEMI
         &kp BSLH &kp X   &kp M &kp Y   &kp C &kp V                                       &kp J     &kp H &kp COMMA &kp W &kp Z &kp FSLH
-        &lt USFUN STAR &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ESC &lt USFUN PLUS
+        &lt USNUM STAR &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ESC &lt USNAV PLUS
         >;
     };
     us_num_layer {
@@ -324,7 +324,7 @@
         &kp DEL   &kp CS_K &kp CS_D &kp CS_U &kp CS_F &csgrave                &csequal     &kp CS_P &csdot   &kp CS_L &kp CS_Q &kp BSPC
         &csquote  &kp CS_O &kp CS_T &kp CS_I &kp CS_S &kp CS_G                &kp CS_B     &kp CS_N &kp CS_E &kp CS_R &kp CS_A &cssemi
         &csbslh   &kp CS_X &kp CS_M &kp CS_Y &kp CS_C &kp CS_V                &kp CS_J     &kp CS_H &cscomma &kp CS_W &kp CS_Z &csfslh
-        &ldia_mosl CSFUN CSDIA &kp LSHFT  &lt CSNAV ENTER  &lt CSNUM SPACE    &kp RSHFT &rdia_mosl CSFUN CSDIA
+        &ldia_mosl CSNUM CSDIA &lt CSNUM TAB  &lt CSNAV ENTER  &lt CSNUM SPACE    &lt CSNAV ESC &rdia_mosl CSNAV CSDIA
         >;
     };
 
