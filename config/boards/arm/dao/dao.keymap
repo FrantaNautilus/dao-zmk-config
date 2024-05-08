@@ -69,6 +69,22 @@
     __VA_ARGS__                                 \
       };
 
+// customizable hold-tap for sticky modifier
+// first modifier
+// second sticky modifier
+#define HTKPSK(name, tap_flavor, tap_term, ...)    \
+  name: name##_hold_tap {                       \
+    flavor          = #tap_flavor;              \
+    compatible      = "zmk,behavior-hold-tap";  \
+    tapping-term-ms = <tap_term>;               \
+    quick-tap-ms    = <QUICK_TAP_MS>;           \
+    require-prior-idle-ms = <PRIOR_IDLE_MS>;    \
+    #binding-cells  = <2>;                      \
+    bindings        = <&kp>, <&sk>;             \
+    __VA_ARGS__                                 \
+      };
+
+
 // customizeble hold-tap for any behavior
 #define HTMOSL(name, tap_flavor, tap_term, ...) \
   name: name##_hold_tap {                       \
@@ -118,7 +134,7 @@
       };
 
   behaviors {
-    HTK(lhrm, balanced, TAPPING_TERM)
+      HTK(lhrm, balanced, TAPPING_TERM)
       HTK(rhrm, balanced, TAPPING_TERM)
       HTMOSL(ldia_mosl, hold-preferred, TAPPING_TERM)
       HTMOSL(rdia_mosl, hold-preferred, TAPPING_TERM)
