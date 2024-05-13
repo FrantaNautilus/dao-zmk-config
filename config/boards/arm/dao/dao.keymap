@@ -138,6 +138,8 @@
       HTK(rhrm, balanced, TAPPING_TERM)
       HTMOSL(ldia_mosl, hold-preferred, TAPPING_TERM)
       HTMOSL(rdia_mosl, hold-preferred, TAPPING_TERM)
+      HTKPSK(kpsk, balanced, TAPPING_TERM)
+      }
   csquote: csquote {
       //label          = "csquote";
       compatible     = "zmk,behavior-mod-morph";
@@ -212,17 +214,17 @@
       //COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
 
       // Shift
-      COMBO(crshft, 7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RSHFT)
-      COMBO(clshft, 4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LSHFT)
+      COMBO(crshft, 7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RSHFT RSHFT)
+      COMBO(clshft, 4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LSHFT LSHFT)
       // Control
-      COMBO(crctrl, 8 20, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RCTRL)
-      COMBO(clctrl, 3 15, USDEF  USNUM USNAV CSDEF CSNUM CSNAV, &kp LCTRL)
-      // Alt
-      COMBO(cllalt, 9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LALT)
-      COMBO(crlalt, 2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LALT)
-      // Gui
-      COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LGUI)
-      COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI)
+      COMBO(crctrl, 8 20, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RCTRL RCTRL)
+      COMBO(clctrl, 3 15, USDEF  USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LCTRL LCTRL)
+      // Alt, right Alt is on combo
+      COMBO(cllalt, 9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)
+      COMBO(crlalt, 2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)
+      // Gui, left Gui is unused
+      COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)
+      COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)
       //Symbols US
       COMBO(usstar,  19 31, USDEF, &kp STAR)
       COMBO(usfslh,  16 28, USDEF, &kp FSLH)
