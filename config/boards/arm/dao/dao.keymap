@@ -115,7 +115,7 @@
     wait-ms        = <1>;                       \
     #binding-cells = <0>;                       \
     bindings       = __VA_ARGS__                \
-      };
+  };
 
 / {
   chosen {
@@ -125,147 +125,145 @@
 };
 
 / {
-  macros {
+  macros {                                                \
     // Czech symbols
-    MACRO(cs_t_caron, <&macro_tap &kp CS_CARON &kp CS_T>;)
-      MACRO(cs_n_caron, <&macro_tap &kp CS_CARON &kp CS_N>;)
-      MACRO(cs_d_caron, <&macro_tap &kp CS_CARON &kp CS_D>;)
-      MACRO(cs_o_acute, <&macro_tap &kp CS_ACUTE &kp CS_O>;)
-      };
-
-  behaviors {
-      HTK(lhrm, balanced, TAPPING_TERM)
-      HTK(rhrm, balanced, TAPPING_TERM)
-      HTMOSL(ldia_mosl, hold-preferred, TAPPING_TERM)
-      HTMOSL(rdia_mosl, hold-preferred, TAPPING_TERM)
-      HTKPSK(kpsk, balanced, TAPPING_TERM)
-      }
-  csquote: csquote {
+    MACRO(cs_t_caron, <&macro_tap &kp CS_CARON &kp CS_T>;)\
+    MACRO(cs_n_caron, <&macro_tap &kp CS_CARON &kp CS_N>;)\
+    MACRO(cs_d_caron, <&macro_tap &kp CS_CARON &kp CS_D>;)\
+    MACRO(cs_o_acute, <&macro_tap &kp CS_ACUTE &kp CS_O>;)\
+  };
+  behaviors {                                             \
+      HTK(lhrm, balanced, TAPPING_TERM)                   \
+      HTK(rhrm, balanced, TAPPING_TERM)                   \
+      HTMOSL(ldia_mosl, hold-preferred, TAPPING_TERM)     \
+      HTMOSL(rdia_mosl, hold-preferred, TAPPING_TERM)     \
+      HTKPSK(kpsk, balanced, TAPPING_TERM)                \
+  };
+  csquote: csquote {                                      \
       //label          = "csquote";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_SQT>, <&kp CS_DQT>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  csbslh: csbslh {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_SQT>, <&kp CS_DQT>;        \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  csbslh: csbslh {                                        \
       //label          = "csbslh";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_BSLH>, <&kp CS_PIPE>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  csdot: csdot {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_BSLH>, <&kp CS_PIPE>;      \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  csdot: csdot {                                          \
       //label          = "csdot";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_DOT>, <&kp CS_LT>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  cscomma: cscomma {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_DOT>, <&kp CS_LT>;         \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  cscomma: cscomma {                                      \
       //label          = "cscomma";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_COMMA>, <&kp CS_GT>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  csfslh: csfslh {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_COMMA>, <&kp CS_GT>;       \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  csfslh: csfslh {                                        \
       //label          = "csfslh";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_FSLH>, <&kp CS_QMARK>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  cssemi: cssemi {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_FSLH>, <&kp CS_QMARK>;     \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  cssemi: cssemi {                                        \
       //label          = "cssemi";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_SEMI>, <&kp CS_COLON>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  csgrave: csgrave {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_SEMI>, <&kp CS_COLON>;     \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  csgrave: csgrave {                                      \
       //label          = "cssemi";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_GRAVE>, <&kp CS_TILDE>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  csequal: csequal {
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_GRAVE>, <&kp CS_TILDE>;    \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
+  csequal: csequal {                                      \
       //label          = "cssemi";
-      compatible     = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings       = <&kp CS_EQUAL>, <&kp CS_PLUS>;
-      mods           = <(MOD_LSFT|MOD_RSFT)>;
-    };
+      compatible     = "zmk,behavior-mod-morph";          \
+      #binding-cells = <0>;                               \
+      bindings       = <&kp CS_EQUAL>, <&kp CS_PLUS>;     \
+      mods           = <(MOD_LSFT|MOD_RSFT)>;             \
+  };
   };
 
   combos {
     compatible = "zmk,combos";
-    COMBO(lag, 28 29, USDEF USNUM CSDEF CSNUM, &kp RALT)
-      COMBO(rag, 33 34, USDEF USNUM CSDEF CSNUM, &kp RALT)
-      COMBO(csdeflayer, 12 13, USDEF, &to CSDEF)
-      COMBO(usdeflayer, 12 13, CSDEF, &to USDEF)
-      //COMBO(csdiilayer, 24 25, CSDEF, &tog CSDII)
-      COMBO(usnavlayer, 22 23, USDEF, &tog USNAV)
-      COMBO(usnumlayer, 10 11, USDEF, &tog USNUM)
-      COMBO(csnavlayer, 22 23, CSDEF, &tog CSNAV)
-      COMBO(csnumlayer, 10 11, CSDEF, &tog CSNUM)
-      //COMBO(copy, 15 16, USDEF CSDEF, &kp K_COPY)
-      //COMBO(paste, 13 14, USDEF CSDEF, &kp K_PASTE)
-      //COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
+    COMBO(lag, 28 29, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
+    COMBO(rag, 33 34, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
+    COMBO(csdeflayer, 12 13, USDEF, &to CSDEF)                                    \
+    COMBO(usdeflayer, 12 13, CSDEF, &to USDEF)                                    \
+    COMBO(usnavlayer, 22 23, USDEF, &tog USNAV)                                   \
+    COMBO(usnumlayer, 10 11, USDEF, &tog USNUM)                                   \
+    COMBO(csnavlayer, 22 23, CSDEF, &tog CSNAV)                                   \
+    COMBO(csnumlayer, 10 11, CSDEF, &tog CSNUM)                                   \
+    //COMBO(copy, 15 16, USDEF CSDEF, &kp K_COPY)
+    //COMBO(paste, 13 14, USDEF CSDEF, &kp K_PASTE)
+    //COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
 
-      // Shift
-      COMBO(crshft, 7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RSHFT RSHFT)
-      COMBO(clshft, 4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LSHFT LSHFT)
-      // Control
-      COMBO(crctrl, 8 20, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RCTRL RCTRL)
-      COMBO(clctrl, 3 15, USDEF  USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LCTRL LCTRL)
-      // Alt, right Alt is on combo
-      COMBO(cllalt, 9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)
-      COMBO(crlalt, 2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)
-      // Gui, left Gui is unused
-      COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)
-      COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)
-      //Symbols US
-      COMBO(usstar,  19 31, USDEF, &kp STAR)
-      COMBO(usfslh,  16 28, USDEF, &kp FSLH)
-      COMBO(usplus,  20 32, USDEF, &kp PLUS)
-      COMBO(usminus, 15 27, USDEF, &kp MINUS)
-      COMBO(uscaret, 21 33, USDEF, &kp CARET)
-      COMBO(usunder, 14 26, USDEF, &kp UNDER)
-      COMBO(usdollr, 22 34, USDEF, &kp DOLLAR)
-      COMBO(usamps,  13 25, USDEF, &kp AMPS)
-      COMBO(usat,    23 35, USDEF, &kp AT)
-      COMBO(usprcnt, 12 24, USDEF, &kp PERCENT)
-      COMBO(ushash,  23 35, USDEF, &kp HASH)
-      COMBO(uslpar,  5 17 , USDEF, &kp LPAR)
-      COMBO(usrpar,  6 18 , USDEF, &kp RPAR)
-      COMBO(uslbkt,  17 29, USDEF, &kp LBKT)
-      COMBO(usrbkt,  18 30, USDEF, &kp RBKT)
-      COMBO(uslbrc,  0 12 , USDEF, &kp LBRC)
-      COMBO(usrbrc,  11 23, USDEF, &kp RBRC)
-      COMBO(usexcl,  7 8,   USDEF, &kp EXCL)
-      COMBO(usqmark, 3 4,   USDEF, &kp QMARK)
-      // Symbols CS
-      COMBO(csstar,  19 31, CSDEF, &kp CS_STAR)
-      COMBO(csfslh,  16 28, CSDEF, &kp CS_FSLH)
-      COMBO(csplus,  20 32, CSDEF, &kp CS_PLUS)
-      COMBO(csminus, 15 27, CSDEF, &kp CS_MINUS)
-      COMBO(cscaret, 21 33, CSDEF, &kp CS_CARET)
-      COMBO(csunder, 14 26, CSDEF, &kp CS_UNDER)
-      COMBO(csdollr, 22 34, CSDEF, &kp CS_DOLLAR)
-      COMBO(csamps,  13 25, CSDEF, &kp CS_AMPS)
-      COMBO(csat,    23 35, CSDEF, &kp CS_AT)
-      COMBO(csprcnt, 12 24, CSDEF, &kp CS_PERCENT)
-      COMBO(cshash,  23 35, CSDEF, &kp CS_HASH)
-      COMBO(cslpar,  5 17 , CSDEF, &kp CS_LPAR)
-      COMBO(csrpar,  6 18 , CSDEF, &kp CS_RPAR)
-      COMBO(cslbkt,  17 29, CSDEF, &kp CS_LBKT)
-      COMBO(csrbkt,  18 30, CSDEF, &kp CS_RBKT)
-      COMBO(cslbrc,  0 12 , CSDEF, &kp CS_LBRC)
-      COMBO(csrbrc,  11 23, CSDEF, &kp CS_RBRC)
-      COMBO(csexcl,  7 8, CSDEF, &kp EXCL)
-      COMBO(csqmark, 3 4, CSDEF, &kp QMARK)
-      };
+    // Shift
+    COMBO(crshft, 7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RSHFT RSHFT)   \
+    COMBO(clshft, 4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LSHFT LSHFT)   \
+    // Control
+    COMBO(crctrl, 8 20, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RCTRL RCTRL)   \
+    COMBO(clctrl, 3 15, USDEF  USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LCTRL LCTRL)  \
+    // Alt, right Alt is on combo
+    COMBO(cllalt, 9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)     \
+    COMBO(crlalt, 2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)     \
+    // Gui, left Gui is unused
+    COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)     \
+    COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RGUI RGUI)     \
+    //Symbols US
+    COMBO(usstar,  19 31, USDEF, &kp STAR)                                        \
+    COMBO(usfslh,  16 28, USDEF, &kp FSLH)                                        \
+    COMBO(usplus,  20 32, USDEF, &kp PLUS)                                        \
+    COMBO(usminus, 15 27, USDEF, &kp MINUS)                                       \
+    COMBO(uscaret, 21 33, USDEF, &kp CARET)                                       \
+    COMBO(usunder, 14 26, USDEF, &kp UNDER)                                       \
+    COMBO(usdollr, 22 34, USDEF, &kp DOLLAR)                                      \
+    COMBO(usamps,  13 25, USDEF, &kp AMPS)                                        \
+    COMBO(usat,    23 35, USDEF, &kp AT)                                          \
+    COMBO(usprcnt, 12 24, USDEF, &kp PERCENT)                                     \
+    COMBO(ushash,  23 35, USDEF, &kp HASH)                                        \
+    COMBO(uslpar,  5 17 , USDEF, &kp LPAR)                                        \
+    COMBO(usrpar,  6 18 , USDEF, &kp RPAR)                                        \
+    COMBO(uslbkt,  17 29, USDEF, &kp LBKT)                                        \
+    COMBO(usrbkt,  18 30, USDEF, &kp RBKT)                                        \
+    COMBO(uslbrc,  0 12 , USDEF, &kp LBRC)                                        \
+    COMBO(usrbrc,  11 23, USDEF, &kp RBRC)                                        \
+    COMBO(usexcl,  7 8,   USDEF, &kp EXCL)                                        \
+    COMBO(usqmark, 3 4,   USDEF, &kp QMARK)                                       \
+    // Symbols CS
+    COMBO(csstar,  19 31, CSDEF, &kp CS_STAR)                                     \
+    COMBO(csfslh,  16 28, CSDEF, &kp CS_FSLH)                                     \
+    COMBO(csplus,  20 32, CSDEF, &kp CS_PLUS)                                     \
+    COMBO(csminus, 15 27, CSDEF, &kp CS_MINUS)                                    \
+    COMBO(cscaret, 21 33, CSDEF, &kp CS_CARET)                                    \
+    COMBO(csunder, 14 26, CSDEF, &kp CS_UNDER)                                    \
+    COMBO(csdollr, 22 34, CSDEF, &kp CS_DOLLAR)                                   \
+    COMBO(csamps,  13 25, CSDEF, &kp CS_AMPS)                                     \
+    COMBO(csat,    23 35, CSDEF, &kp CS_AT)                                       \
+    COMBO(csprcnt, 12 24, CSDEF, &kp CS_PERCENT)                                  \
+    COMBO(cshash,  23 35, CSDEF, &kp CS_HASH)                                     \
+    COMBO(cslpar,  5 17 , CSDEF, &kp CS_LPAR)                                     \
+    COMBO(csrpar,  6 18 , CSDEF, &kp CS_RPAR)                                     \
+    COMBO(cslbkt,  17 29, CSDEF, &kp CS_LBKT)                                     \
+    COMBO(csrbkt,  18 30, CSDEF, &kp CS_RBKT)                                     \
+    COMBO(cslbrc,  0 12 , CSDEF, &kp CS_LBRC)                                     \
+    COMBO(csrbrc,  11 23, CSDEF, &kp CS_RBRC)                                     \
+    COMBO(csexcl,  7 8, CSDEF, &kp EXCL)                                          \
+    COMBO(csqmark, 3 4, CSDEF, &kp QMARK)                                         \
+  };
 
   // ------------------------------------------------------------------------------------------------------------
   // |  0    |  1  |  2  |  3   |  4   |  5   |          x         |  6   |  7    |  8    |  9   |  10   |  11   |
