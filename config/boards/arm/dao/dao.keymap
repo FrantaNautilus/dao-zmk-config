@@ -227,7 +227,7 @@
     COMBO(copy, 13 14, USDEF CSDEF, &kp K_COPY)                                   \
     COMBO(paste, 15 16, USDEF CSDEF, &kp K_PASTE)                                 \
     COMBO(tab, 14 15, USDEF CSDEF, &kp TAB)                                       \
-    COMBO(escape, 20 21, USDEF CSDEF, &kp ESC)                                    \
+    COMBO(enter, 20 21, USDEF CSDEF, &kp ENTER)                                    \
 
   // ------------------------------------------------------------------------------------------------------------
   // |  0    |  RG |  LA |  LC  |  LS  |LP    |          x         |    RP|  LS   |  LC   |  LA  |  RG   |  11   |
@@ -319,7 +319,7 @@
         &kp DEL  &kp X   &kp D &kp H   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp L  &kp DOT   &kp Q &kp BSPC
         &kp ESC  &kp O   &kp T &kp U   &kp S &kp V                                       &kp B     &kp N &kp R  &kp I     &kp A &kp SEMI
         &kp BSLH &kp SQT &kp G &kp Y   &kp C &kp J                                       &kp Z     &kp M &kp W  &kp COMMA &kp K &kp FSLH
-        &lt USNUM STAR &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ESC &lt USNAV PLUS
+        &lt USNUM STAR &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ENTER &lt USNAV PLUS
         >;
     };
     us_num_layer {
