@@ -198,19 +198,44 @@
   };
 
   combos {
+  // ------------------------------------------------------------------------------------------------------------
+  // |  0    |  1  |  2  |  3   |  4   |  5   |          x         |  6   |  7    |  8    |  9   |  10   |  11   |
+  // |  12   |  13 |  14 |  15  |  16  |  17  |          x         |  18  |  19   |  20   |  21  |  22   |  23   |
+  // |  24   |  25 |  26 |  27  |  28  |  29  |          x         |  30  |  31   |  32   |  33  |  34   |  35   |
+  //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
+  //
+  // ------------------------------------------------------------------------------------------------------------
+  // |  0    |  1  |  2  |  3   |  4   |  5   |          x         |  6   |  7    |  8    |  9   |  10   |  11   |
+  // |  12   |  13 |   T A B    |  16  |  17  |          x         |  18  |  19   |     E S C    |  22   |  23   |
+  // |  24   |  25 |  26 |  27  |   R A L T   |          x         |   R A L T    |  32   |  33  |  34   |  35   |
+  //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
+  //
+  // ------------------------------------------------------------------------------------------------------------
+  // |  0    |  1  |  2  |  E X C L    |  5   |          x         |  6   |  Q M A R K    |  9   |  10   |  11   |
+  // |  12   |  C O P Y  |  P A S T E  |  17  |          x         |  18  |  19   |  20   |  21  |  22   |  23   |
+  // |  24   |  25 |  26 |  27  |  28  |  29  |          x         |  30  |  31   |  32   |  33  |  34   |  35   |
+  //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
+  //
     compatible = "zmk,combos";
     COMBO(lag, 28 29, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
-    COMBO(rag, 33 34, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
+    COMBO(rag, 30 31, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
     COMBO(csdeflayer, 12 13, USDEF, &to CSDEF)                                    \
     COMBO(usdeflayer, 12 13, CSDEF, &to USDEF)                                    \
     COMBO(usnavlayer, 22 23, USDEF, &tog USNAV)                                   \
     COMBO(usnumlayer, 10 11, USDEF, &tog USNUM)                                   \
     COMBO(csnavlayer, 22 23, CSDEF, &tog CSNAV)                                   \
     COMBO(csnumlayer, 10 11, CSDEF, &tog CSNUM)                                   \
-    //COMBO(copy, 15 16, USDEF CSDEF, &kp K_COPY)
-    //COMBO(paste, 13 14, USDEF CSDEF, &kp K_PASTE)
-    //COMBO(repeat, 14 15, USDEF CSDEF, &key_repeat)
+    COMBO(copy, 13 14, USDEF CSDEF, &kp K_COPY)                                   \
+    COMBO(paste, 15 16, USDEF CSDEF, &kp K_PASTE)                                 \
+    COMBO(tab, 14 15, USDEF CSDEF, &kp TAB)                                       \
+    COMBO(escape, 20 21, USDEF CSDEF, &kp ESC)                                    \
 
+  // ------------------------------------------------------------------------------------------------------------
+  // |  0    |  RG |  LA |  LC  |  LS  |LP    |          x         |    RP|  LS   |  LC   |  LA  |  RG   |  11   |
+  // |  12   |  UI |  LT |  TRL |  HFT |AR LB |          x         | RB AR|  HFT  |  TRL  |  LT  |  UI   |  23   |
+  // |  24   |  25 |  26 |  27  |  28  |   KT |          x         | KT   |  31   |  32   |  33  |  34   |  35   |
+  //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
+  //
     // Shift
     COMBO(crshft, 7 19, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk RSHFT RSHFT)   \
     COMBO(clshft, 4 16, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LSHFT LSHFT)   \
@@ -287,9 +312,9 @@
 
     default_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  Q  |  L  | ESC  |  P   | ,↑<  |                   | .↑>  |  F   |  U    |  D   |   K   | BKSPC |
-      // |  '↑"  |  A  |  R  |  E   |  N   |  B   |                   |  G   |  S   |  I    |  T   |   O   |  ;↑:  |
-      // |  \↑|  |  Z  |  W  | TAB  |  H   |  J   |                   |  V   |  C   |  Y    |  M   |   X   |  /↑?  |
+      // |  DEL  |  K  |  D  |  U   |  F   |  `   |                   |  =   |  P   | .↑>   |  L   |   Q   | BKSPC |
+      // |  '↑"  |  O  |  T  |  I   |  S   |  G   |                   |  B   |  N   |  E    |  R   |   A   |  ;↑:  |
+      // |  \↑|  |  X  |  M  |  Y   |  C   |  V   |                   |  J   |  H   | ,↑<   |  W   |   Z   |  /↑?  |
       //                            |NUMTOG| SHFT |  SPACE |  | ENTER | SHFT | FUN  |
       bindings = <
         &kp DEL  &kp K   &kp D &kp U   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp DOT   &kp L &kp Q &kp BSPC
