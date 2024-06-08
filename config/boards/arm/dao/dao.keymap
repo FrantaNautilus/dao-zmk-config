@@ -311,14 +311,14 @@
 
     default_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  K  |  D  |  U   |  F   |  `   |                   |  =   |  P   | .↑>   |  L   |   Q   | BKSPC |
-      // |  '↑"  |  O  |  T  |  I   |  S   |  G   |                   |  B   |  N   |  E    |  R   |   A   |  ;↑:  |
-      // |  \↑|  |  X  |  M  |  Y   |  C   |  V   |                   |  J   |  H   | ,↑<   |  W   |   Z   |  /↑?  |
-      //                            |NUMTOG| SHFT |  SPACE |  | ENTER | SHFT | FUN  |
+      // |  DEL  |  X  |  D  |  H   |  F   | `↑~  |                   | =↑+  |  P   |  L    | .↑>  |   Q   | BKSPC |
+      // |  ESC  |  O  |  T  |  U   |  S   |  V   |                   |  B   |  N   |  R    |  I   |   A   |  ;↑:  |
+      // |  \↑|  | '↑" |  G  |  Y   |  C   |  J   |                   |  Z   |  M   |  W    | ,↑<  |   K   |  /↑?  |
+      //                            |NUM * |NUMTAB|NAVSPACE|  |NUM E  |NAVESC|NAV + |
       bindings = <
-        &kp DEL  &kp K   &kp D &kp U   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp DOT   &kp L &kp Q &kp BSPC
-        &kp SQT  &kp O   &kp T &kp I   &kp S &kp G                                       &kp B     &kp N &kp E     &kp R &kp A &kp SEMI
-        &kp BSLH &kp X   &kp M &kp Y   &kp C &kp V                                       &kp J     &kp H &kp COMMA &kp W &kp Z &kp FSLH
+        &kp DEL  &kp X   &kp D &kp H   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp L  &kp DOT   &kp Q &kp BSPC
+        &kp ESC  &kp O   &kp T &kp U   &kp S &kp V                                       &kp B     &kp N &kp R  &kp I     &kp A &kp SEMI
+        &kp BSLH &kp SQT &kp G &kp Y   &kp C &kp J                                       &kp Z     &kp M &kp W  &kp COMMA &kp K &kp FSLH
         &lt USNUM STAR &lt USNUM TAB &lt USNAV ENTER  &lt USNUM SPACE  &lt USNAV ESC &lt USNAV PLUS
         >;
     };
@@ -355,30 +355,25 @@
     };
 
     cs_def_layer {
-      // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  K  |  D  |  U   |  F   | `↑~  |                   | =↑+  |  P   | .↑>   |  L   |   Q   | BKSPC |
-      // |  '↑"  |  O  |  T  |  I   |  S   |  G   |                   |  B   |  N   |  E    |  R   |   A   |  ;↑:  |
-      // |  \↑|  |  X  |  M  |  Y   |  C   |  V   |                   |  J   |  H   | ,↑<   |  W   |   Z   |  /↑?  |
-      //                            | NAV  |      |  SPACE |  | ENTER |      | FUN  |
-      bindings = <
-        &kp DEL   &kp CS_K &kp CS_D &kp CS_U &kp CS_F &csgrave                &csequal     &kp CS_P &csdot   &kp CS_L &kp CS_Q &kp BSPC
-        &csquote  &kp CS_O &kp CS_T &kp CS_I &kp CS_S &kp CS_G                &kp CS_B     &kp CS_N &kp CS_E &kp CS_R &kp CS_A &cssemi
-        &csbslh   &kp CS_X &kp CS_M &kp CS_Y &kp CS_C &kp CS_V                &kp CS_J     &kp CS_H &cscomma &kp CS_W &kp CS_Z &csfslh
+        bindings = <
+        &kp DEL   &kp CS_X &kp CS_D &kp CS_H &kp CS_F &csgrave                &csequal     &kp CS_P &kp CS_L &csdot   &kp CS_Q &kp BSPC
+        &kp ESC   &kp CS_O &kp CS_T &kp CS_U &kp CS_S &kp CS_V                &kp CS_B     &kp CS_N &kp CS_R &kp CS_I &kp CS_A &cssemi
+        &csbslh   &csquote &kp CS_G &kp CS_Y &kp CS_C &kp CS_J                &kp CS_Z     &kp CS_M &kp CS_W &cscomma &kp CS_K &csfslh
         &ldia_mosl CSNUM CSDIA &lt CSNUM TAB  &lt CSNAV ENTER  &lt CSNUM SPACE    &lt CSNAV ESC &rdia_mosl CSNAV CSDIA
         >;
     };
 
     cs_dia_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  ß  |  ď  |  ů   |  ú   |  ÷   |                   |  ?   |  ←   |  ↓    |  ↑   |   →   | BKSPC |
-      // |   §   |  ó  |  ť  |  í   |  š   |  ´   |                   |  ˇ   |  ň   |  ě    |  ř   |   á   |   º   |
-      // |   Ω   |  ẞ  |  ¨  |  ý   |  č   |  ×   |                   |  ı   |  °   |  é    |  !   |   ž   |   ¦   |
+      // |  DEL  |  ß  |  ď  |  č   |  ú   |  ÷   |                   |  ?   |  !   |  ž    |  ň   |   °   | BKSPC |
+      // |   §   |  é  |  ý  |  ů   |  š   |  ˇ   |                   |  ´   |  ě   |  ř    |  í   |   á   |   º   |
+      // |   Ω   |  ẞ  |  ¨  |  ť   |  ó   |  ×   |                   |  ı   |  ←   |  ↓    |  ↑   |   →   |   ¦   |
       //                            |  DII |      |  SPACE |  | ENTER |      |      |
       bindings = <
-        &kp DEL      &kp CS_SZ       &cs_d_caron   &kp CS_U_RING  &kp CS_U_ACUTE &kp CS_DIV               &kp CS_QMARK    &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW  &kp BSPC
-        &kp CS_SECT  &cs_o_acute     &cs_t_caron   &kp CS_I_ACUTE &kp CS_S_CARON &kp CS_CARON             &kp CS_ACUTE    &cs_n_caron      &kp CS_E_CARON &kp CS_R_CARON  &kp CS_A_ACUTE &kp CS_DEG
-        &kp CS_OMEGA &kp CS_SZ_SMALL &kp CS_UMLAUT &kp CS_Y_ACUTE &kp CS_C_CARON &kp CS_MULT              &kp CS_NEGATE   &kp CS_DEAD_RING &kp CS_E_ACUTE &kp CS_EXCL     &kp CS_Z_CARON &kp CS_PSEUDOPIPE
-        &sl CSDII        &to CSDEF      &to CSDEF  &to CSDEF &to CSDEF       &sl CSDII
+        &kp DEL      &kp CS_SZ       &cs_d_caron    &kp CS_C_CARON &kp CS_U_ACUTE &kp CS_DIV               &kp CS_QMARK    &kp CS_EXCL      &kp CS_Z_CARON &cs_n_caron     &kp CS_DEAD_RING &kp BSPC
+        &kp CS_SECT  &kp CS_E_ACUTE  &kp CS_Y_ACUTE &kp CS_U_ACUTE &kp CS_S_CARON &kp CS_CARON             &kp CS_ACUTE    &kp CS_E_CARON   &kp CS_R_CARON &kp CS_I_ACUTE  &kp CS_A_ACUTE   &kp CS_DEG
+        &kp CS_OMEGA &kp CS_SZ_SMALL &kp CS_UMLAUT  &cs_t_caron    &cs_o_acute    &kp CS_MULT              &kp CS_NEGATE   &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW    &kp CS_PSEUDOPIPE
+        &sl CSDII        &to CSDEF      &to CSDEF   &to CSDEF &to CSDEF       &sl CSDII
         >;
     };
 
