@@ -357,9 +357,9 @@
 
     cs_def_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  Q  |  L  | ESC  |  P   | ,↑<  |                   | .↑>  |  F   |  U    |  D   |   K   | BKSPC |
-      // |  '↑"  |  A  |  R  |  E   |  N   |  B   |                   |  G   |  S   |  I    |  T   |   O   |  ;↑:  |
-      // |  \↑|  |  Z  |  W  | TAB  |  H   |  J   |                   |  V   |  C   |  Y    |  M   |   X   |  /↑?  |
+      // |  DEL  |  K  |  D  |  U   |  F   | `↑~  |                   | =↑+  |  P   | .↑>   |  L   |   Q   | BKSPC |
+      // |  '↑"  |  O  |  T  |  I   |  S   |  G   |                   |  B   |  N   |  E    |  R   |   A   |  ;↑:  |
+      // |  \↑|  |  X  |  M  |  Y   |  C   |  V   |                   |  J   |  H   | ,↑<   |  W   |   Z   |  /↑?  |
       //                            | NAV  |      |  SPACE |  | ENTER |      | FUN  |
       bindings = <
         &kp DEL   &kp CS_K &kp CS_D &kp CS_U &kp CS_F &csgrave                &csequal     &kp CS_P &csdot   &kp CS_L &kp CS_Q &kp BSPC
@@ -371,10 +371,10 @@
 
     cs_dia_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  ←  |  ↑  |  ↓   |  →   |  ?   |                   |  ÷   |  ú   |  ů    |  ď   |   ß   | BKSPC |
-      // |   º   |  á  |  ř  |  ě   |  ň   |  ´   |                   |  ˇ   |  š   |  í    |  ť   |   ó   |   §   |
-      // |   ¦   |  ž  |  !  |  é   |  °   |  ı   |                   |  ×   |  č   |  ý    |  ¨   |   ẞ   |       |
-      //                            |      |      |  SPACE |  | ENTER |      |      |
+      // |  DEL  |  ß  |  ď  |  ů   |  ú   |  ÷   |                   |  ?   |  ←   |  ↓    |  ↑   |   →   | BKSPC |
+      // |   §   |  ó  |  ť  |  í   |  š   |  ´   |                   |  ˇ   |  ň   |  ě    |  ř   |   á   |   º   |
+      // |   Ω   |  ẞ  |  ¨  |  ý   |  č   |  ×   |                   |  ı   |  °   |  é    |  !   |   ž   |   ¦   |
+      //                            |  DII |      |  SPACE |  | ENTER |      |      |
       bindings = <
         &kp DEL      &kp CS_SZ       &cs_d_caron   &kp CS_U_RING  &kp CS_U_ACUTE &kp CS_DIV               &kp CS_QMARK    &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW  &kp BSPC
         &kp CS_SECT  &cs_o_acute     &cs_t_caron   &kp CS_I_ACUTE &kp CS_S_CARON &kp CS_CARON             &kp CS_ACUTE    &cs_n_caron      &kp CS_E_CARON &kp CS_R_CARON  &kp CS_A_ACUTE &kp CS_DEG
