@@ -204,35 +204,35 @@
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
   // ------------------------------------------------------------------------------------------------------------
-  // |  0    |  1  |  2  |  3   |  4   |  5   |          x         |  6   |  7    |  8    |  9   |  10   |  11   |
-  // |  12   |  13 |   T A B    |  16  |  17  |          x         |  18  |  19   |     ENTER    |  22   |  23   |
-  // |  24   |  25 |  26 |  27  |   R A L T   |          x         |   R A L T    |  32   |  33  |  34   |  35   |
+  // |    R A L T  |  P L U S   |  E X C L    |          x         |  Q M A R K   |   S T A R    |    R A L T    |
+  // |   TOG  LANG |   T A B    | U N D E R   |          x         |  C A R E T   |   E N T E R  |               |
+  // |   TOG   NAV |  M I N U S |    A T      |          x         |   H A S H    |   F S L H    |   TOG   NUM   |
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
   // ------------------------------------------------------------------------------------------------------------
-  // |  0    |  1  |  2  |  E X C L    |  5   |          x         |  6   |  Q M A R K    |  9   |  10   |  11   |
-  // |  12   |  C O P Y  |  P A S T E  |  17  |          x         |  18  |  19   |  20   |  21  |  22   |  23   |
-  // |  24   |  25 |  26 |  27  |  28  |  29  |          x         |  30  |  31   |  32   |  33  |  34   |  35   |
+  // |  0    |  1  |  2  | D O L L A R |  5   |          x         |  6   |   L B K T     |   R B K T    |  11   |
+  // |  12   |  C O P Y  |  P A S T E  |  17  |          x         |  18  |   L P A R     |   R P A R    |  23   |
+  // |  24   |  PERCENT  |   A M P S   |  29  |          x         |  30  |   L B R C     |   R B R C    |  35   |
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
     compatible = "zmk,combos";
-    COMBO(lag, 28 29, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
-    COMBO(rag, 30 31, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
+    COMBO(lag,  0 1, USDEF USNUM CSDEF CSNUM, &kp RALT)                           \
+    COMBO(rag, 10 11, USDEF USNUM CSDEF CSNUM, &kp RALT)                          \
     COMBO(csdeflayer, 12 13, USDEF, &to CSDEF)                                    \
     COMBO(usdeflayer, 12 13, CSDEF, &to USDEF)                                    \
-    COMBO(usnavlayer, 22 23, USDEF, &tog USNAV)                                   \
-    COMBO(usnumlayer, 10 11, USDEF, &tog USNUM)                                   \
-    COMBO(csnavlayer, 22 23, CSDEF, &tog CSNAV)                                   \
-    COMBO(csnumlayer, 10 11, CSDEF, &tog CSNUM)                                   \
+    COMBO(usnavlayer, 24 25, USDEF, &tog USNAV)                                   \
+    COMBO(usnumlayer, 34 35, USDEF, &tog USNUM)                                   \
+    COMBO(csnavlayer, 24 25, CSDEF, &tog CSNAV)                                   \
+    COMBO(csnumlayer, 34 35, CSDEF, &tog CSNUM)                                   \
     COMBO(copy, 13 14, USDEF CSDEF, &kp K_COPY)                                   \
     COMBO(paste, 15 16, USDEF CSDEF, &kp K_PASTE)                                 \
     COMBO(tab, 14 15, USDEF CSDEF, &kp TAB)                                       \
-    COMBO(enter, 20 21, USDEF CSDEF, &kp ENTER)                                    \
+    COMBO(enter, 20 21, USDEF CSDEF, &kp ENTER)                                   \
 
   // ------------------------------------------------------------------------------------------------------------
-  // |  0    |  RG |  LA |  LC  |  LS  |LP    |          x         |    RP|  LS   |  LC   |  LA  |  RG   |  11   |
-  // |  12   |  UI |  LT |  TRL |  HFT |AR LB |          x         | RB AR|  HFT  |  TRL  |  LT  |  UI   |  23   |
-  // |  24   |  25 |  26 |  27  |  28  |   KT |          x         | KT   |  31   |  32   |  33  |  34   |  35   |
+  // | TIL   |  RG |  LA |  LC  |  LS  |  COL |          x         |  DQ  |  LS   |  LC   |  LA  |  RG   |  11   |
+  // | DE  L |  UI |  LT |  TRL |  HFT |   ON |          x         |   T  |  HFT  |  TRL  |  LT  |  UI   |   G   |
+  // |     T |   7 |   5 |   3  |   1  |   8  |          x         |   9  |   0   |   2   |   4  |   6   |   T   |
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
     // Shift
@@ -245,48 +245,80 @@
     COMBO(cllalt, 9 21, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)     \
     COMBO(crlalt, 2 14, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LALT LALT)     \
     // Gui, left Gui is unused
-    COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI RGUI)     \
-    COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI RGUI)     \
+    COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI RGUI)       \
+    COMBO(crgui, 1 13,  USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp RGUI RGUI)       \
     //Symbols US
-    COMBO(usstar,  19 31, USDEF, &kp STAR)                                        \
-    COMBO(usfslh,  16 28, USDEF, &kp FSLH)                                        \
-    COMBO(usplus,  20 32, USDEF, &kp PLUS)                                        \
-    COMBO(usminus, 15 27, USDEF, &kp MINUS)                                       \
-    COMBO(uscaret, 21 33, USDEF, &kp CARET)                                       \
-    COMBO(usunder, 14 26, USDEF, &kp UNDER)                                       \
-    COMBO(usdollr, 22 34, USDEF, &kp DOLLAR)                                      \
-    COMBO(usamps,  13 25, USDEF, &kp AMPS)                                        \
-    COMBO(usat,    23 35, USDEF, &kp AT)                                          \
-    COMBO(usprcnt, 12 24, USDEF, &kp PERCENT)                                     \
-    COMBO(ushash,  23 35, USDEF, &kp HASH)                                        \
-    COMBO(uslpar,  5 17 , USDEF, &kp LPAR)                                        \
-    COMBO(usrpar,  6 18 , USDEF, &kp RPAR)                                        \
-    COMBO(uslbkt,  17 29, USDEF, &kp LBKT)                                        \
-    COMBO(usrbkt,  18 30, USDEF, &kp RBKT)                                        \
-    COMBO(uslbrc,  0 12 , USDEF, &kp LBRC)                                        \
-    COMBO(usrbrc,  11 23, USDEF, &kp RBRC)                                        \
-    COMBO(usexcl,  7 8,   USDEF, &kp EXCL)                                        \
-    COMBO(usqmark, 3 4,   USDEF, &kp QMARK)                                       \
+    COMBO(usstar,  7 9,   USDEF, &kp STAR)                                        \
+    COMBO(usfslh,  32 33, USDEF, &kp FSLH)                                        \
+    COMBO(usplus,  2 3,   USDEF, &kp PLUS)                                        \
+    COMBO(usminus, 26 27, USDEF, &kp MINUS)                                       \
+    COMBO(uscaret, 18 19, USDEF, &kp CARET)                                       \
+    COMBO(usunder, 16 17, USDEF, &kp UNDER)                                       \
+    COMBO(usdollr, 3 4,   USDEF, &kp DOLLAR)                                      \
+    COMBO(usamps,  27 28, USDEF, &kp AMPS)                                        \
+    COMBO(usat,    28 29, USDEF, &kp AT)                                          \
+    COMBO(usprcnt, 25 26, USDEF, &kp PERCENT)                                     \
+    COMBO(ushash,  30 31, USDEF, &kp HASH)                                        \
+    COMBO(uslpar,  19 20, USDEF, &kp LPAR)                                        \
+    COMBO(usrpar,  21 22, USDEF, &kp RPAR)                                        \
+    COMBO(uslbkt,  7 8,   USDEF, &kp LBKT)                                        \
+    COMBO(usrbkt,  9 10 , USDEF, &kp RBKT)                                        \
+    COMBO(uslbrc,  31 32, USDEF, &kp LBRC)                                        \
+    COMBO(usrbrc,  33 34, USDEF, &kp RBRC)                                        \
+    COMBO(usexcl,  4 5,   USDEF, &kp EXCL)                                        \
+    COMBO(usqmark, 6 7,   USDEF, &kp QMARK)                                       \
+    COMBO(ustilde, 0 12,  USDEF, &kp TILDE)                                       \
+    COMBO(uslt,    12 24, USDEF, &kp LT)                                          \
+    COMBO(usgt,    23 35, USDEF, &kp GT)                                          \
+    COMBO(uscolon, 5 17,  USDEF, &kp COLON)                                       \
     // Symbols CS
-    COMBO(csstar,  19 31, CSDEF, &kp CS_STAR)                                     \
-    COMBO(csfslh,  16 28, CSDEF, &kp CS_FSLH)                                     \
-    COMBO(csplus,  20 32, CSDEF, &kp CS_PLUS)                                     \
-    COMBO(csminus, 15 27, CSDEF, &kp CS_MINUS)                                    \
-    COMBO(cscaret, 21 33, CSDEF, &kp CS_CARET)                                    \
-    COMBO(csunder, 14 26, CSDEF, &kp CS_UNDER)                                    \
-    COMBO(csdollr, 22 34, CSDEF, &kp CS_DOLLAR)                                   \
-    COMBO(csamps,  13 25, CSDEF, &kp CS_AMPS)                                     \
-    COMBO(csat,    23 35, CSDEF, &kp CS_AT)                                       \
-    COMBO(csprcnt, 12 24, CSDEF, &kp CS_PERCENT)                                  \
-    COMBO(cshash,  23 35, CSDEF, &kp CS_HASH)                                     \
-    COMBO(cslpar,  5 17 , CSDEF, &kp CS_LPAR)                                     \
-    COMBO(csrpar,  6 18 , CSDEF, &kp CS_RPAR)                                     \
-    COMBO(cslbkt,  17 29, CSDEF, &kp CS_LBKT)                                     \
-    COMBO(csrbkt,  18 30, CSDEF, &kp CS_RBKT)                                     \
-    COMBO(cslbrc,  0 12 , CSDEF, &kp CS_LBRC)                                     \
-    COMBO(csrbrc,  11 23, CSDEF, &kp CS_RBRC)                                     \
-    COMBO(csexcl,  7 8, CSDEF, &kp EXCL)                                          \
-    COMBO(csqmark, 3 4, CSDEF, &kp QMARK)                                         \
+    COMBO(csstar,  7 9,   CSDEF, &kp CS_STAR)                                     \
+    COMBO(csfslh,  32 33, CSDEF, &kp CS_FSLH)                                     \
+    COMBO(csplus,  2 3,   CSDEF, &kp CS_PLUS)                                     \
+    COMBO(csminus, 26 27, CSDEF, &kp CS_MINUS)                                    \
+    COMBO(cscaret, 18 19, CSDEF, &kp CS_CARET)                                    \
+    COMBO(csunder, 16 17, CSDEF, &kp CS_UNDER)                                    \
+    COMBO(csdollr, 3 4,   CSDEF, &kp CS_DOLLAR)                                   \
+    COMBO(csamps,  27 28, CSDEF, &kp CS_AMPS)                                     \
+    COMBO(csat,    28 29, CSDEF, &kp CS_AT)                                       \
+    COMBO(csprcnt, 25 26, CSDEF, &kp CS_PERCENT)                                  \
+    COMBO(cshash,  30 31, CSDEF, &kp CS_HASH)                                     \
+    COMBO(cslpar,  19 20, CSDEF, &kp CS_LPAR)                                     \
+    COMBO(csrpar,  21 22, CSDEF, &kp CS_RPAR)                                     \
+    COMBO(cslbkt,  7 8,   CSDEF, &kp CS_LBKT)                                     \
+    COMBO(csrbkt,  9 10 , CSDEF, &kp CS_RBKT)                                     \
+    COMBO(cslbrc,  31 32, CSDEF, &kp CS_LBRC)                                     \
+    COMBO(csrbrc,  33 34, CSDEF, &kp CS_RBRC)                                     \
+    COMBO(csexcl,  4 5,   CSDEF, &kp CS_EXCL)                                     \
+    COMBO(csqmark, 6 7,   CSDEF, &kp CS_QMARK)                                    \
+    COMBO(cstilde, 0 12,  CSDEF, &kp CS_TILDE)                                    \
+    COMBO(cslt,    12 24, CSDEF, &kp CS_LT)                                       \
+    COMBO(csgt,    23 35, CSDEF, &kp CS_GT)                                       \
+    COMBO(cscolon, 5 17,  CSDEF, &kp CS_COLON)                                    \
+    // US Numbers
+    COMBO(uszero,  19 31, USDEF, &kp N0)                                          \
+    COMBO(ustwo,   20 32, USDEF, &kp N2)                                          \
+    COMBO(usfour,  21 33, USDEF, &kp N4)                                          \
+    COMBO(ussix,   22 34, USDEF, &kp N6)                                          \
+    COMBO(useight, 17 29, USDEF, &kp N8)                                          \
+    COMBO(usone,   16 28, USDEF, &kp N1)                                          \
+    COMBO(usthree, 15 27, USDEF, &kp N3)                                          \
+    COMBO(usfive,  14 26, USDEF, &kp N5)                                          \
+    COMBO(usseven, 13 14, USDEF, &kp N7)                                          \
+    COMBO(usnine,  18 30, USDEF, &kp N9)                                          \
+    // CS Numbers
+    COMBO(cszero,  19 31, CSDEF, &kp CS_N0)                                       \
+    COMBO(cstwo,   20 32, CSDEF, &kp CS_N2)                                       \
+    COMBO(csfour,  21 33, CSDEF, &kp CS_N4)                                       \
+    COMBO(cssix,   22 34, CSDEF, &kp CS_N6)                                       \
+    COMBO(cseight, 17 29, CSDEF, &kp CS_N8)                                       \
+    COMBO(csone,   16 28, CSDEF, &kp CS_N1)                                       \
+    COMBO(csthree, 15 27, CSDEF, &kp CS_N3)                                       \
+    COMBO(csfive,  14 26, CSDEF, &kp CS_N5)                                       \
+    COMBO(csseven, 13 14, CSDEF, &kp CS_N7)                                       \
+    COMBO(csnine,  18 30, CSDEF, &kp CS_N9)                                       \
+    
+    
   };
 
   // ------------------------------------------------------------------------------------------------------------
