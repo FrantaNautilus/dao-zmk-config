@@ -311,15 +311,15 @@
 
     default_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  X  |  D  |  H   |  F   | `↑~  |                   | =↑+  |  P   |  L    | .↑>  |   Q   | BKSPC |
-      // |  ESC  |  O  |  T  |  U   |  S   |  V   |                   |  B   |  N   |  R    |  I   |   A   |  ;↑:  |
-      // |  \↑|  | '↑" |  G  |  Y   |  C   |  J   |                   |  Z   |  M   |  W    | ,↑<  |   K   |  /↑?  |
-      //                            |NUM * |NUMTAB|NAVSPACE|  |NUM E  |NAVESC|NAV + |
+      // |  DEL  | `↑~ |  Y  |  O   |  L   |  Q   |                   |  F   |  B   |  D    |  P   |  =↑+  | BKSPC |
+      // |  ESC  |  U  |  I  |  A   |  R   |  J   |                   |  M   |  H   |  T    |  N   |   S   |  ;↑:  |
+      // |  \↑|  |  W  |  X  | ,↑<  | .↑>  | '↑"  |                   |  K   |  V   |  G    |  Z   |   C   |  /↑?  |
+      //                            |NUMTAB|NUM * |NAV E  |  |NUMSPACE|NAV * |NAVESC|
       bindings = <
-        &kp DEL  &kp X   &kp D &kp H   &kp F &kp GRAVE                                   &kp EQUAL &kp P &kp L  &kp DOT   &kp Q &kp BSPC
-        &kp ESC  &kp O   &kp T &kp U   &kp S &kp V                                       &kp B     &kp N &kp R  &kp I     &kp A &kp SEMI
-        &kp BSLH &kp SQT &kp G &kp Y   &kp C &kp J                                       &kp Z     &kp M &kp W  &kp COMMA &kp K &kp FSLH
-        &lt USNUM STAR &lt USNUM TAB &lt USNAV E  &lt USNUM SPACE  &lt USNAV ENTER &lt USNAV PLUS
+        &kp DEL  &kp GRAVE &kp Y &kp O     &kp L   &kp Q               &kp F     &kp B &kp D  &kp P &kp EQUAL &kp BSPC
+        &kp ESC  &kp U     &kp I &kp A     &kp R   &kp J               &kp M     &kp H &kp T  &kp N &kp S     &kp SEMI
+        &kp BSLH &kp W     &kp X &kp COMMA &kp DOT &kp SQT             &kp K     &kp V &kp G  &kp Z &kp C     &kp FSLH
+        &lt USNUM TAB &lt USNUM TAB &lt USNAV E  &lt USNUM SPACE  &lt USNAV ESC &lt USNAV ESC
         >;
     };
     us_num_layer {
@@ -356,18 +356,18 @@
 
     cs_def_layer {
         bindings = <
-        &kp DEL   &kp CS_X &kp CS_D &kp CS_H &kp CS_F &csgrave                &csequal     &kp CS_P &kp CS_L &csdot   &kp CS_Q &kp BSPC
-        &kp ESC   &kp CS_O &kp CS_T &kp CS_U &kp CS_S &kp CS_V                &kp CS_B     &kp CS_N &kp CS_R &kp CS_I &kp CS_A &cssemi
-        &csbslh   &csquote &kp CS_G &kp CS_Y &kp CS_C &kp CS_J                &kp CS_Z     &kp CS_M &kp CS_W &cscomma &kp CS_K &csfslh
-        &ldia_mosl CSNUM CSDIA &lt CSNUM TAB  &lt CSNAV CS_E  &lt CSNUM SPACE    &lt CSNAV ESC &rdia_mosl CSNAV CSDIA
+        &kp DEL   &csgrave &kp CS_Y &kp CS_O &kp CS_L &kp CS_Q                &kp CS_F     &kp CS_B &kp CS_D &csdot   &csequal &kp BSPC
+        &kp ESC   &kp CS_U &kp CS_I &kp CS_A &kp CS_R &kp CS_J                &kp CS_M     &kp CS_H &kp CS_T &kp CS_N &kp CS_S &cssemi
+        &csbslh   &kp CS_W &kp CS_X &cscomma &csdot   &csquote                &kp CS_K     &kp CS_V &kp CS_G &kp CS_Z &kp CS_C &csfslh
+        &lt CSNUM TAB &ldia_mosl CSNUM CSDIA  &lt CSNAV CS_E  &lt CSNUM SPACE  &rdia_mosl CSNAV CSDIA  &lt CSNAV ESC
         >;
     };
 
     cs_dia_layer {
       // ------------------------------------------------------------------------------------------------------------
-      // |  DEL  |  ß  |  ď  |  č   |  ú   |  ÷   |                   |  ?   |  !   |  ž    |  ň   |   °   | BKSPC |
-      // |   §   |  é  |  ý  |  ů   |  š   |  ˇ   |                   |  ´   |  ě   |  ř    |  í   |   á   |   º   |
-      // |   Ω   |  ẞ  |  ¨  |  ť   |  ó   |  ×   |                   |  ı   |  ←   |  ↓    |  ↑   |   →   |   ¦   |
+      // |  DEL  |  ß  |  ý  |  ó   |  ?   |  ÷   |                   |  ň   |  !   |  ž    |  ú   |   °   | BKSPC |
+      // |   §   |  ů  |  í  |  á   |  ř   |  ˇ   |                   |  ´   |  ě   |  č    |  é   |   š   |   º   |
+      // |   Ω   |  ẞ  |  ¨  |  ť   |  ď   |  ×   |                   |  ı   |  ←   |  ↓    |  ↑   |   →   |   ¦   |
       //                            |  DII |      |  SPACE |  | ENTER |      |      |
       bindings = <
         &kp DEL      &kp CS_SZ       &cs_d_caron    &kp CS_C_CARON &kp CS_U_ACUTE &kp CS_DIV               &kp CS_QMARK    &kp CS_EXCL      &kp CS_Z_CARON &cs_n_caron     &kp CS_DEAD_RING &kp BSPC
