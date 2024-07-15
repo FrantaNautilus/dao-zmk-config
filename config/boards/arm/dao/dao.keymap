@@ -397,7 +397,7 @@
       bindings = <
         &kp DEL      &kp CS_SZ       &kp CS_Y_ACUTE &cs_o_acute    &kp CS_QMARK   &kp CS_DIV               &cs_n_caron     &kp CS_EXCL      &kp CS_Z_CARON &kp CS_U_ACUTE  &kp CS_DEAD_RING &kp BSPC
         &kp CS_SECT  &kp CS_U_RING   &kp CS_I_ACUTE &kp CS_A_ACUTE &kp CS_R_CARON &kp CS_CARON             &kp CS_ACUTE    &kp CS_E_CARON   &kp CS_C_CARON &kp CS_E_ACUTE  &kp CS_S_CARON   &kp CS_DEG
-        &kp CS_OMEGA &kp CS_SZ_SMALL &kp CS_UMLAUT  &cs_t_caron    &cs_d_acute    &kp CS_MULT              &kp CS_NEGATE   &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW    &kp CS_PSEUDOPIPE
+        &kp CS_OMEGA &kp CS_SZ_SMALL &kp CS_UMLAUT  &cs_t_caron    &cs_d_caron    &kp CS_MULT              &kp CS_NEGATE   &kp CS_LARROW    &kp CS_DARROW  &kp CS_UARROW   &kp CS_RARROW    &kp CS_PSEUDOPIPE
         &sl CSDII        &to CSDEF      &to CSDEF   &to CSDEF &to CSDEF       &sl CSDII
         >;
     };
