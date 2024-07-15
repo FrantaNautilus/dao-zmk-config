@@ -292,8 +292,10 @@
     COMBO(cscolon, 5 17, CSDEF, &kp CS_COLON)
     COMBO(usdqt, 6 18, USDEF, &kp DQT)
     COMBO(csdqt, 6 18, CSDEF, &kp CS_DQT)
-    COMBO(uszero, 19 31, USDEF, &kp N0)
-    COMBO(cszero, 19 31, CSDEF, &kp CS_N0)
+    //COMBO(uszero, 19 31, USDEF, &kp N0)
+    combo_uszero {timeout-ms = <25>; bindings = <&kp N0>; key-positions = <19 31>; layers = <USDEF>;};
+    //COMBO(cszero, 19 31, CSDEF, &kp CS_N0)
+    combo_cszero {timeout-ms = <25>; bindings = <&kp CS_N0>; key-positions = <19 31>; layers = <CSDEF>;};
     COMBO(ustwo, 20 32, USDEF, &kp N2)
     COMBO(cstwo, 20 32, CSDEF, &kp CS_N2)
     COMBO(usfour, 21 33, USDEF, &kp N4)
