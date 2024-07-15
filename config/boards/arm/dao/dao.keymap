@@ -272,7 +272,6 @@
     COMBO(csrpar, 21 22, CSDEF, &kp CS_RPAR)
     COMBO(uslbkt, 7 8, USDEF, &kp LBKT)
     COMBO(cslbkt, 7 8, CSDEF, &kp CS_LBKT)
-    COMBO(cslbrc, 31 32, CSDEF, &kp CS_LBRC)
     COMBO(usrbkt, 9 10 , USDEF, &kp RBKT)
     COMBO(csrbkt, 9 10 , CSDEF, &kp CS_RBKT)
     COMBO(uslbrc, 31 32, USDEF, &kp LBRC)
