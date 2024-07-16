@@ -133,7 +133,7 @@
     MACRO(cs_o_acute, <&macro_tap &kp CS_ACUTE &kp CS_O>;)\
     MACRO(us_th, <&macro_tap &kp T &kp H>;)\
     MACRO(us_ing, <&macro_tap &kp I &kp N &kp G>;)\
-    MACRO(us_and, <&macro_tap &kp SPACE &kp A &kp N $kp D &kp SPACE>;)\
+    MACRO(us_and, <&macro_tap &kp SPACE &kp A &kp N &kp D &kp SPACE>;)\
   };
   behaviors {                                             \
       HTK(lhrm, balanced, TAPPING_TERM)                   \
