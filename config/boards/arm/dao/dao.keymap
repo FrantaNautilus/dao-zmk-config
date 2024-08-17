@@ -213,8 +213,8 @@
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
   // ------------------------------------------------------------------------------------------------------------
-  // |  0    |  1  |  2  | D O L L A R |  5   |          x         |  6   |   L B K T     |   R B K T    |  11   |
-  // |  12   |  C O P Y  |  P A S T E  |  17  |          x         |  18  |   L P A R     |   R P A R    |  23   |
+  // |  0    |  1  |  2  |   C O P Y   |  5   |          x         |  6   |   L B K T     |   R B K T    |  11   |
+  // |  12   |  DOLLAR   |  P A S T E  |  17  |          x         |  18  |   L P A R     |   R P A R    |  23   |
   // |  24   |  PERCENT  |   A M P S   |  29  |          x         |  30  |   L B R C     |   R B R C    |  35   |
   //                            |  36  |  37  |  38    | x |  39   |  40  |  41   |
   //
@@ -231,7 +231,7 @@
     COMBO(csnavretrn, 24 25, CSNAV, &to CSDEF)
     COMBO(csnumlayer, 34 35, CSDEF, &to CSNUM)
     COMBO(csnumretrn, 34 35, CSNUM, &to CSDEF)
-    COMBO(copy, 13 14, USDEF CSDEF, &kp K_COPY)
+    COMBO(copy, 3 4, USDEF CSDEF, &kp K_COPY)
     COMBO(paste, 15 16, USDEF CSDEF, &kp K_PASTE)
     COMBO(tab, 14 15, USDEF CSDEF, &kp TAB)
     COMBO(enter, 20 21, USDEF CSDEF, &kp ENTER)
@@ -251,8 +251,8 @@
     COMBO(clgui, 10 22, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LGUI LGUI)
     COMBO(crgui, 1 13, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kpsk LGUI LGUI)
     COMBO(ccrgui, 22 23, USDEF USNUM USNAV CSDEF CSNUM CSNAV, &kp LGUI)
-    COMBO(usstar, 7 9, USDEF, &kp STAR)
-    COMBO(csstar, 7 9, CSDEF, &kp CS_STAR)
+    COMBO(usstar, 8 9, USDEF, &kp STAR)
+    COMBO(csstar, 8 9, CSDEF, &kp CS_STAR)
     COMBO(usfslh, 32 33, USDEF, &kp FSLH)
     COMBO(csfslh, 32 33, CSDEF, &kp CS_FSLH)
     COMBO(usplus, 2 3, USDEF, &kp PLUS)
@@ -263,8 +263,8 @@
     COMBO(cscaret, 18 19, CSDEF, &kp CS_CARET)
     COMBO(usunder, 16 17, USDEF, &kp UNDER)
     COMBO(csunder, 16 17, CSDEF, &kp CS_UNDER)
-    COMBO(usdollr, 3 4, USDEF, &kp DOLLAR)
-    COMBO(csdollr, 3 4, CSDEF, &kp CS_DOLLAR)
+    COMBO(usdollr, 13 14, USDEF, &kp DOLLAR)
+    COMBO(csdollr, 13 14, CSDEF, &kp CS_DOLLAR)
     COMBO(usamps, 27 28, USDEF, &kp AMPS)
     COMBO(csamps, 27 28, CSDEF, &kp CS_AMPS)
     COMBO(usat, 28 29, USDEF, &kp AT)
@@ -379,9 +379,9 @@
 
     us_adjust_layer {
       bindings = <
-        &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &none       &none       &none  &none
-        &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp K_POWER  &kp K_SLEEP &kp K_LOCK  &none  &none
-        &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &kp C_BRI_DN &none       &none       &none  &none
+        &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &kp C_BRI_DN &none       &none  &none
+        &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp K_POWER  &kp K_SLEEP  &kp K_LOCK  &none  &none
+        &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &none        &none        &none       &none  &none
         &to USDEF    &to USDEF &to USDEF &to USDEF &to USDEF &to USDEF
         >;
     };
@@ -448,9 +448,9 @@
 
     cs_adjust_layer {
       bindings = <
-        &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &none       &none       &none  &none
-        &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp K_POWER  &kp K_SLEEP &kp K_LOCK  &none  &none
-        &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &kp C_BRI_DN &none       &none       &none  &none
+        &bootloader &none        &none        &none        &none        &tog USADJ                  &kp PAUSE_BREAK &kp C_BRI_UP &kp C_BRI_DN &none       &none  &none
+        &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &kp SYSREQ      &kp K_POWER  &kp K_SLEEP  &kp K_LOCK  &none  &none
+        &sys_reset  &none        &none        &none        &none        &none                       &kp K_CANCEL    &none        &none        &none       &none  &none
         &to USDEF    &to USDEF &to USDEF &to USDEF &to USDEF &to USDEF
         >;
     };
